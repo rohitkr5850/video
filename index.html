@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Transformations</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .video-container {
+            perspective: 1000px; /* Add perspective to the video container */
+        }
+        
+        video {
+            width: 500px;
+            transform-origin: center; /* Set the origin of transformations */
+            animation: rotateScale 10s infinite alternate; /* Animate rotation and scaling */
+        }
+        
+        @keyframes rotateScale {
+            0% {
+                transform: rotateY(0deg) scale(1);
+            }
+            50% {
+                transform: rotateY(180deg) scale(1.2);
+            }
+            100% {
+                transform: rotateY(360deg) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="video-container">
+    <video id="myVideo" controls>
+        <source src="Recording 2024-07-01 190433_434166.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<script>
+    // Additional JavaScript if needed for more dynamic transformations
+    const video = document.getElementById("myVideo");
+
+    // Example: Dynamically adjust perspective with a slider (if required)
+    // document.querySelector('.video-container').style.perspective = '800px'; // Example
+</script>
+
+</body>
+</html>
